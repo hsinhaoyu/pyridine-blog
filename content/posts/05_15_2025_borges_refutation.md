@@ -2,7 +2,7 @@
 title: "時間的反駁"
 date: 2025-05-17T12:13:31+10:00
 draft: false
-tags: ["波赫士", "數學"]
+tags: ["波赫士", "數學", "閱讀"]
 ---
 波赫士有篇短文叫 [A New Refutation of Time](https://en.wikipedia.org/wiki/A_New_Refutation_of_Time)。標標題真是有趣。如果否認了時間的概念，那 new 這個字還有意義嗎？
 
