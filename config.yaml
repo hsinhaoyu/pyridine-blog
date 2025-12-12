@@ -5,9 +5,6 @@ title: 俞欣豪的 blog
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish) / da (Danish), default 'en'
 defaultContentLanguage: en
 
-# !!! exampleSite only, you may need to delete the line: `themesDir: ../../` 
-themesDir: ./themes/
-
 hasCJKLanguage: true
 permalinks:
   posts: /posts/:title/
