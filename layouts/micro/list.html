@@ -1,29 +1,47 @@
 {{ define "main" }}
-<main class="main">
-  <header class="page-header">
-    <h1>{{ .Title }}</h1>
-  </header>
+  <div id="single">
 
-  {{ $pages := where .Pages "Draft" "ne" true }}
-  {{ $pages = sort $pages "Date" "desc" }}
+    {{/* Paginator for the micro section.
+          Change 20 to however many micro entries you want per page. */}}
+    {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 15 }}
 
-  {{ $p := .Paginate $pages }}
+    {{ range $paginator.Pages }}
+      <div class="content">
+        <div class="meta">
+          <span class="date">{{ .Date.Format "2006-01-02" }}</span>
 
-  <div class="micro-feed">
-    {{ range $p.Pages }}
-      <article class="micro-item">
-        <div class="micro-meta">
-          <a href="{{ .RelPermalink }}">
-            {{ .Date.Format "2006-01-02 15:04" }}
+          {{ with .Params.tags }}
+            <span class="tags">
+              {{ range . }}
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>
+              {{ end }}
+            </span>
+          {{ end }}
+        </div>
+
+        {{/* Full micro entry content, no title */}}
+        {{ .Content }}
+      </div>
+    {{ end }}
+
+    {{/* Pagination links: Older left, Newer right */}}
+    <div class="pagination">
+      {{ if $paginator.HasNext }}
+        <div class="pre">
+          <a href="{{ $paginator.Next.URL }}">
+            {{ i18n "postsOlder" }}
           </a>
         </div>
-        <div class="micro-content">
-          {{ .Content }}
-        </div>
-      </article>
-    {{ end }}
-  </div>
+      {{ end }}
 
-  {{ template "_internal/pagination.html" . }}
-</main>
+      {{ if $paginator.HasPrev }}
+        <div class="next">
+          <a href="{{ $paginator.Prev.URL }}">
+            {{ i18n "postsNewer" }}
+          </a>
+        </div>
+      {{ end }}
+    </div>
+
+  </div>
 {{ end }}
