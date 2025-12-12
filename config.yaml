@@ -13,7 +13,6 @@ hasCJKLanguage: true
 permalinks:
   posts: /posts/:title/
 
-paginate: 4
 
 googleAnalytics: your-google-analytics-id
 disqusShortname: your-disqus-shortname
@@ -88,3 +87,6 @@ params:
     ## e.g.
     # - js/custom.js # local js in `static/js/custom.js`
     # - https://example.com/custom.js # remote js
+
+pagination:
+  pagerSize: 5
