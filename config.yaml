@@ -32,15 +32,6 @@ markup:
     renderer:
       unsafe: true
 
-# Social links in footer, support github,twitter,stackoverflow,facebook
-social:
-  # e.g.
-  #github: your-github-link
-  #twitter: your-twitter-link
-  #stackoverflow: your-stackoverflow-link
-  # facebook: your-facebook-link
-
-
 # Site parameters
 params:
   # Site Author
@@ -77,6 +68,14 @@ params:
     ## e.g.
     # - name: Project
     #   path: /project
+
+  # Social links in footer, support github,twitter,stackoverflow,facebook
+  social:
+    # e.g.
+    #github: your-github-link
+    #twitter: your-twitter-link
+    #stackoverflow: your-stackoverflow-link
+    # facebook: your-facebook-link
 
   # You can put your custom css and js to `static` directory, or use remote css and js files which start with `http://` or `https://`
   customCSS:
