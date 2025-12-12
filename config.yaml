@@ -1,7 +1,6 @@
 baseURL: https://pyridine.hhyu.org
 languageCode: en-us
 title: 俞欣豪的 blog
-theme: mini
 
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish) / da (Danish), default 'en'
 defaultContentLanguage: en
@@ -16,6 +15,11 @@ permalinks:
 
 googleAnalytics: your-google-analytics-id
 disqusShortname: your-disqus-shortname
+
+
+module:
+  imports:
+   -  path: github.com/nodejh/hugo-theme-mini
 
 # Hugo Configure Markup
 # More info: https://gohugo.io/getting-started/configuration-markup#
