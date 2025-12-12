@@ -1,0 +1,29 @@
+{{ define "main" }}
+<main class="main">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  {{ $pages := where .Pages "Draft" "ne" true }}
+  {{ $pages = sort $pages "Date" "desc" }}
+
+  {{ $p := .Paginate $pages }}
+
+  <div class="micro-feed">
+    {{ range $p.Pages }}
+      <article class="micro-item">
+        <div class="micro-meta">
+          <a href="{{ .RelPermalink }}">
+            {{ .Date.Format "2006-01-02 15:04" }}
+          </a>
+        </div>
+        <div class="micro-content">
+          {{ .Content }}
+        </div>
+      </article>
+    {{ end }}
+  </div>
+
+  {{ template "_internal/pagination.html" . }}
+</main>
+{{ end }}

@@ -1,0 +1,4 @@
+.micro-feed { display: grid; gap: 1rem; }
+.micro-item { padding: 0.9rem 1rem; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; }
+.micro-meta { font-size: 0.9rem; opacity: 0.7; margin-bottom: 0.4rem; }
+.micro-content p { margin: 0.35rem 0; }
